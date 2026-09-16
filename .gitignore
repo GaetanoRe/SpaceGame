@@ -1,0 +1,24 @@
+# Build output
+build/
+build-*/
+out/
+cmake-build-*/
+
+# CMake-generated files (in case CMake is ever run in-source)
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
