@@ -19,6 +19,9 @@ int main(){
     Vector3 spherePos = {0.0f, 0.0f, 0.0f}; // position of the sphere.
     SetTargetFPS(60);
 
+    Mesh sphere = GenMeshSphere(2.0f, 8, 8);
+    Model sphereModel = LoadModelFromMesh(sphere);
+
     while(!WindowShouldClose())
     {
         UpdateCamera(&camera, CAMERA_ORBITAL);
@@ -27,14 +30,15 @@ int main(){
 
         ClearBackground(RAYWHITE);
         BeginMode3D(camera); // Render anything between here and EndMode3D
-        DrawSphere(spherePos, 2.0f, MAROON);
-        DrawSphereWires(spherePos, 2.0f, 16, 16, BLACK);
+        DrawModel(sphereModel, spherePos, 1, MAROON);
+        // DrawSphereWires(spherePos, 2.0f, 8, 8, BLACK);
         DrawGrid(10, 1.0f);
         EndMode3D();
 
         EndDrawing();
     }
 
+    UnloadModel(sphereModel);
     CloseWindow();
     return 0;
 }
